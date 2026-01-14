@@ -34,9 +34,18 @@ return {
 			vim.opt_local.modifiable = true
 		end
 
+		dap.listeners.after.event_terminated.nomod = function()
+			vim.opt_local.modifiable = true
+		end
+
+		dap.listeners.after.event_exited.nomod = function()
+			vim.opt_local.modifiable = true
+		end
+
 		vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
 		vim.keymap.set("n", "<F5>", dap.continue)
 		vim.keymap.set("n", "<S-F5>", dap.terminate)
+		vim.keymap.set("n", "<C-F5>", dap.pause)
 		vim.keymap.set("n", "<leader>dj", dap.step_over)
 		vim.keymap.set("n", "<leader>dl", dap.step_into)
 		vim.keymap.set("n", "<leader>dh", dap.step_out)
