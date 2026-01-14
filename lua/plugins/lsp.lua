@@ -142,9 +142,9 @@ return {
 				-- Open Autocomplete menu
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
-			experimental = {
-				ghost_text = true,
-			},
+			-- experimental = {
+			-- 	ghost_text = true,
+			-- },
 		})
 
 		-- If you want insert `(` after select function or method item
