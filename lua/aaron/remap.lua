@@ -8,9 +8,11 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Exit terminal mode with Esc
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
-vim.keymap.set("n", "<leader><space>", vim.cmd.noh, { desc = "Remove search highlights" })
+-- Press Esc in normal mode to remove search highlights
+vim.keymap.set("n", "<Esc>", vim.cmd.noh, { desc = "Remove search highlights" })
 
 -- Copy/Paste from system clipboard
 vim.keymap.set("n", "<leader>y", '"+y')
@@ -22,4 +24,5 @@ vim.keymap.set("v", "<leader>p", '"+p')
 vim.keymap.set("v", "y", "ygvo<Esc>")
 
 -- Don't overwrite register when pasting in visual mode
-vim.keymap.set("v", "p", "P")
+-- TODO: make this work with snippets
+-- vim.keymap.set("v", "p", "P")
